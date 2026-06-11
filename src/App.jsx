@@ -22,7 +22,7 @@ const TEAM = {
 };
 const team = (n) => TEAM[n] || { es: n, f: "⚽" };
 const fmtDate = (iso) => new Date(iso).toLocaleDateString("es-AR",
-  { weekday: "short", day: "numeric", month: "short" });
+  { weekday: "short", day: "numeric", month: "short", timeZone: "America/Argentina/Buenos_Aires" });
 const fmtTime = (iso) => new Date(iso).toLocaleTimeString("es-AR",
   { hour: "2-digit", minute: "2-digit" });
 
