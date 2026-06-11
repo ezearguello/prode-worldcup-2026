@@ -3,22 +3,22 @@ import { supabase } from "./lib/supabase.js";
 
 /* ---- equipos: nombre (openfootball) -> {es, bandera} ---- */
 const TEAM = {
-  Algeria:{es:"Argelia",f:"🇩🇿"}, Argentina:{es:"Argentina",f:"🇦🇷"}, Australia:{es:"Australia",f:"🇦🇺"},
-  Austria:{es:"Austria",f:"🇦🇹"}, Belgium:{es:"Bélgica",f:"🇧🇪"}, "Bosnia & Herzegovina":{es:"Bosnia",f:"🇧🇦"},
-  Brazil:{es:"Brasil",f:"🇧🇷"}, Canada:{es:"Canadá",f:"🇨🇦"}, "Cape Verde":{es:"Cabo Verde",f:"🇨🇻"},
-  Colombia:{es:"Colombia",f:"🇨🇴"}, Croatia:{es:"Croacia",f:"🇭🇷"}, "Curaçao":{es:"Curazao",f:"🇨🇼"},
-  "Czech Republic":{es:"Rep. Checa",f:"🇨🇿"}, "DR Congo":{es:"RD Congo",f:"🇨🇩"}, Ecuador:{es:"Ecuador",f:"🇪🇨"},
-  Egypt:{es:"Egipto",f:"🇪🇬"}, England:{es:"Inglaterra",f:"🏴"}, France:{es:"Francia",f:"🇫🇷"},
-  Germany:{es:"Alemania",f:"🇩🇪"}, Ghana:{es:"Ghana",f:"🇬🇭"}, Haiti:{es:"Haití",f:"🇭🇹"},
-  Iran:{es:"Irán",f:"🇮🇷"}, Iraq:{es:"Irak",f:"🇮🇶"}, "Ivory Coast":{es:"Costa de Marfil",f:"🇨🇮"},
-  Japan:{es:"Japón",f:"🇯🇵"}, Jordan:{es:"Jordania",f:"🇯🇴"}, Mexico:{es:"México",f:"🇲🇽"},
-  Morocco:{es:"Marruecos",f:"🇲🇦"}, Netherlands:{es:"Países Bajos",f:"🇳🇱"}, "New Zealand":{es:"N. Zelanda",f:"🇳🇿"},
-  Norway:{es:"Noruega",f:"🇳🇴"}, Panama:{es:"Panamá",f:"🇵🇦"}, Paraguay:{es:"Paraguay",f:"🇵🇾"},
-  Portugal:{es:"Portugal",f:"🇵🇹"}, Qatar:{es:"Catar",f:"🇶🇦"}, "Saudi Arabia":{es:"Arabia Saudita",f:"🇸🇦"},
-  Scotland:{es:"Escocia",f:"🏴󠁧󠁢󠁳󠁣󠁴󠁿"}, Senegal:{es:"Senegal",f:"🇸🇳"}, "South Africa":{es:"Sudáfrica",f:"🇿🇦"},
-  "South Korea":{es:"Corea del Sur",f:"🇰🇷"}, Spain:{es:"España",f:"🇪🇸"}, Sweden:{es:"Suecia",f:"🇸🇪"},
-  Switzerland:{es:"Suiza",f:"🇨🇭"}, Tunisia:{es:"Túnez",f:"🇹🇳"}, Turkey:{es:"Turquía",f:"🇹🇷"},
-  USA:{es:"EE.UU.",f:"🇺🇸"}, Uruguay:{es:"Uruguay",f:"🇺🇾"}, Uzbekistan:{es:"Uzbekistán",f:"🇺🇿"},
+  Algeria: { es: "Argelia", f: "🇩🇿" }, Argentina: { es: "Argentina", f: "🇦🇷" }, Australia: { es: "Australia", f: "🇦🇺" },
+  Austria: { es: "Austria", f: "🇦🇹" }, Belgium: { es: "Bélgica", f: "🇧🇪" }, "Bosnia & Herzegovina": { es: "Bosnia", f: "🇧🇦" },
+  Brazil: { es: "Brasil", f: "🇧🇷" }, Canada: { es: "Canadá", f: "🇨🇦" }, "Cape Verde": { es: "Cabo Verde", f: "🇨🇻" },
+  Colombia: { es: "Colombia", f: "🇨🇴" }, Croatia: { es: "Croacia", f: "🇭🇷" }, "Curaçao": { es: "Curazao", f: "🇨🇼" },
+  "Czech Republic": { es: "Rep. Checa", f: "🇨🇿" }, "DR Congo": { es: "RD Congo", f: "🇨🇩" }, Ecuador: { es: "Ecuador", f: "🇪🇨" },
+  Egypt: { es: "Egipto", f: "🇪🇬" }, England: { es: "Inglaterra", f: "🏴" }, France: { es: "Francia", f: "🇫🇷" },
+  Germany: { es: "Alemania", f: "🇩🇪" }, Ghana: { es: "Ghana", f: "🇬🇭" }, Haiti: { es: "Haití", f: "🇭🇹" },
+  Iran: { es: "Irán", f: "🇮🇷" }, Iraq: { es: "Irak", f: "🇮🇶" }, "Ivory Coast": { es: "Costa de Marfil", f: "🇨🇮" },
+  Japan: { es: "Japón", f: "🇯🇵" }, Jordan: { es: "Jordania", f: "🇯🇴" }, Mexico: { es: "México", f: "🇲🇽" },
+  Morocco: { es: "Marruecos", f: "🇲🇦" }, Netherlands: { es: "Países Bajos", f: "🇳🇱" }, "New Zealand": { es: "N. Zelanda", f: "🇳🇿" },
+  Norway: { es: "Noruega", f: "🇳🇴" }, Panama: { es: "Panamá", f: "🇵🇦" }, Paraguay: { es: "Paraguay", f: "🇵🇾" },
+  Portugal: { es: "Portugal", f: "🇵🇹" }, Qatar: { es: "Catar", f: "🇶🇦" }, "Saudi Arabia": { es: "Arabia Saudita", f: "🇸🇦" },
+  Scotland: { es: "Escocia", f: "🏴󠁧󠁢󠁳󠁣󠁴󠁿" }, Senegal: { es: "Senegal", f: "🇸🇳" }, "South Africa": { es: "Sudáfrica", f: "🇿🇦" },
+  "South Korea": { es: "Corea del Sur", f: "🇰🇷" }, Spain: { es: "España", f: "🇪🇸" }, Sweden: { es: "Suecia", f: "🇸🇪" },
+  Switzerland: { es: "Suiza", f: "🇨🇭" }, Tunisia: { es: "Túnez", f: "🇹🇳" }, Turkey: { es: "Turquía", f: "🇹🇷" },
+  USA: { es: "EE.UU.", f: "🇺🇸" }, Uruguay: { es: "Uruguay", f: "🇺🇾" }, Uzbekistan: { es: "Uzbekistán", f: "🇺🇿" },
 };
 const team = (n) => TEAM[n] || { es: n, f: "⚽" };
 const fmtDate = (iso) => new Date(iso).toLocaleDateString("es-AR",
@@ -65,10 +65,12 @@ function AuthScreen() {
         <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
           {["login", "signup"].map((m) => (
             <button key={m} className="btn" onClick={() => setMode(m)}
-              style={{ flex: 1, padding: "8px", fontSize: 13,
+              style={{
+                flex: 1, padding: "8px", fontSize: 13,
                 background: mode === m ? "var(--ink)" : "transparent",
                 color: mode === m ? "#fff" : "var(--muted)",
-                border: mode === m ? "none" : "1.5px solid var(--line)" }}>
+                border: mode === m ? "none" : "1.5px solid var(--line)"
+              }}>
               {m === "login" ? "Entrar" : "Crear cuenta"}
             </button>
           ))}
@@ -86,8 +88,10 @@ function AuthScreen() {
           {busy ? "…" : mode === "login" ? "Entrar" : "Crear cuenta"}
         </button>
         {msg && (
-          <p style={{ fontSize: 13, marginTop: 12, marginBottom: 0,
-            color: msg.ok ? "var(--pitchDk)" : "var(--hot)" }}>{msg.t}</p>
+          <p style={{
+            fontSize: 13, marginTop: 12, marginBottom: 0,
+            color: msg.ok ? "var(--pitchDk)" : "var(--hot)"
+          }}>{msg.t}</p>
         )}
       </div>
     </div>
@@ -170,7 +174,7 @@ function MatchRow({ m, pred, onSave, league }) {
         <span className="eyebrow">{m.round_label}{m.group_label ? ` · Grupo ${m.group_label}` : ""}</span>
         {finished ? <span className="chip" style={{ borderColor: "var(--pitch)", color: "var(--pitchDk)" }}>● Final {m.home_score}–{m.away_score}</span>
           : locked ? <span className="chip" style={{ color: "var(--muted)" }}>🔒 Cerrado</span>
-          : <span className="chip mono" style={{ borderColor: "var(--hot)", color: "var(--hot)", fontSize: 11 }}>ABIERTO</span>}
+            : <span className="chip mono" style={{ borderColor: "var(--hot)", color: "var(--hot)", fontSize: 11 }}>ABIERTO</span>}
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", gap: 8 }}>
@@ -197,8 +201,10 @@ function MatchRow({ m, pred, onSave, league }) {
         </div>
       </div>
 
-      <div style={{ borderTop: "1px dashed var(--line)", marginTop: 12, paddingTop: 10,
-        display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+      <div style={{
+        borderTop: "1px dashed var(--line)", marginTop: 12, paddingTop: 10,
+        display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, flexWrap: "wrap"
+      }}>
         <span style={{ fontSize: 12, color: "var(--muted)" }}>
           {fmtDate(m.kickoff)} · {fmtTime(m.kickoff)} hs{m.venue ? ` · ${m.venue}` : ""}
         </span>
@@ -209,8 +215,10 @@ function MatchRow({ m, pred, onSave, league }) {
           </button>
         )}
         {finished && pred != null && (
-          <span className="mono" style={{ fontWeight: 700, fontSize: 14,
-            color: pts > 0 ? "var(--pitchDk)" : "var(--muted)" }}>
+          <span className="mono" style={{
+            fontWeight: 700, fontSize: 14,
+            color: pts > 0 ? "var(--pitchDk)" : "var(--muted)"
+          }}>
             tu {pred.pred_home}–{pred.pred_away} · {pts > 0 ? `+${pts}` : "0"} pts
           </span>
         )}
@@ -260,13 +268,17 @@ function Predictions({ matches, preds, onSave, league }) {
     <div className="rise">
       <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
         <button className="btn" onClick={() => setShowFinished(false)}
-          style={{ flex: 1, padding: 10, fontSize: 13, background: !showFinished ? "var(--pitch)" : "transparent",
-            color: !showFinished ? "#fff" : "var(--muted)", border: !showFinished ? "none" : "1.5px solid var(--line)" }}>
+          style={{
+            flex: 1, padding: 10, fontSize: 13, background: !showFinished ? "var(--pitch)" : "transparent",
+            color: !showFinished ? "#fff" : "var(--muted)", border: !showFinished ? "none" : "1.5px solid var(--line)"
+          }}>
           Por jugar ({open.length})
         </button>
         <button className="btn" onClick={() => setShowFinished(true)}
-          style={{ flex: 1, padding: 10, fontSize: 13, background: showFinished ? "var(--pitch)" : "transparent",
-            color: showFinished ? "#fff" : "var(--muted)", border: showFinished ? "none" : "1.5px solid var(--line)" }}>
+          style={{
+            flex: 1, padding: 10, fontSize: 13, background: showFinished ? "var(--pitch)" : "transparent",
+            color: showFinished ? "#fff" : "var(--muted)", border: showFinished ? "none" : "1.5px solid var(--line)"
+          }}>
           Jugados ({done.length})
         </button>
       </div>
@@ -303,19 +315,25 @@ function Leaderboard({ league, meId }) {
       {rows.map((r, i) => {
         const you = r.user_id === meId;
         return (
-          <div key={r.user_id} style={{ display: "grid", gridTemplateColumns: "30px 1fr auto",
+          <div key={r.user_id} style={{
+            display: "grid", gridTemplateColumns: "30px 1fr auto",
             alignItems: "center", gap: 10, padding: "11px 16px",
             borderBottom: i < rows.length - 1 ? "1px solid var(--line)" : "none",
-            background: you ? "rgba(30,122,77,.06)" : "transparent" }}>
-            <span className="mono display" style={{ fontSize: 18, fontWeight: 700,
-              color: i === 0 ? "var(--gold)" : "var(--muted)" }}>{i + 1}</span>
+            background: you ? "rgba(30,122,77,.06)" : "transparent"
+          }}>
+            <span className="mono display" style={{
+              fontSize: 18, fontWeight: 700,
+              color: i === 0 ? "var(--gold)" : "var(--muted)"
+            }}>{i + 1}</span>
             <div>
               <div style={{ fontWeight: 700, fontSize: 15 }}>
                 {r.display_name}{you && <span style={{ color: "var(--pitch)" }}> · vos</span>}
               </div>
               <div style={{ height: 5, borderRadius: 3, marginTop: 5, background: "var(--line)", maxWidth: 220, overflow: "hidden" }}>
-                <div style={{ height: "100%", width: `${(Number(r.points) / max) * 100}%`,
-                  background: you ? "var(--pitch)" : "var(--celeste)", transition: "width .5s" }} />
+                <div style={{
+                  height: "100%", width: `${(Number(r.points) / max) * 100}%`,
+                  background: you ? "var(--pitch)" : "var(--celeste)", transition: "width .5s"
+                }} />
               </div>
             </div>
             <span className="mono" style={{ fontSize: 17, fontWeight: 700 }}>{r.points}</span>
@@ -351,8 +369,10 @@ function AdminRow({ m, onResult }) {
     setTimeout(() => setS("idle"), 1500);
   };
   return (
-    <div className="ticket" style={{ padding: "10px 14px", marginBottom: 8, display: "flex",
-      alignItems: "center", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}>
+    <div className="ticket" style={{
+      padding: "10px 14px", marginBottom: 8, display: "flex",
+      alignItems: "center", justifyContent: "space-between", gap: 10, flexWrap: "wrap"
+    }}>
       <span style={{ fontSize: 13, fontWeight: 600 }}>
         {team(m.team1).f} {team(m.team1).es} vs {team(m.team2).es} {team(m.team2).f}
         {m.status === "finished" && <span style={{ color: "var(--pitchDk)" }}> · cargado</span>}
@@ -387,6 +407,10 @@ export default function App() {
     return () => sub.subscription.unsubscribe();
   }, []);
 
+  useEffect(() => {
+    if (league && league.id !== "__new") localStorage.setItem("prode_league", league.id);
+  }, [league]);
+
   const loadAll = useCallback(async (uid) => {
     const [{ data: prof }, { data: lgs }, { data: ms }, { data: ps }] = await Promise.all([
       supabase.from("profiles").select("*").eq("id", uid).single(),
@@ -396,7 +420,11 @@ export default function App() {
     ]);
     setProfile(prof); setLeagues(lgs || []); setMatches(ms || []);
     const map = {}; (ps || []).forEach((p) => (map[p.match_id] = p)); setPreds(map);
-    if (lgs && lgs.length) setLeague((cur) => cur || lgs[0]);
+    if (lgs && lgs.length) {
+      const saved = localStorage.getItem("prode_league");
+      const found = lgs.find((l) => l.id === saved);
+      setLeague((cur) => cur || found || lgs[0]);
+    }
   }, []);
 
   useEffect(() => { if (session?.user) loadAll(session.user.id); }, [session, loadAll]);
@@ -446,15 +474,15 @@ export default function App() {
       {league.id === "__new"
         ? <LeaguePicker onPicked={(lg) => { setLeagues((l) => [...l, lg]); setLeague(lg); }} />
         : <>
-            <div className="ticket" style={{ display: "flex", marginBottom: 20, overflow: "hidden" }}>
-              {tabs.map(([k, lbl]) => (
-                <button key={k} className="tab" data-on={tab === k} onClick={() => setTab(k)}>{lbl}</button>
-              ))}
-            </div>
-            {tab === "jugar" && <Predictions matches={matches} preds={preds} onSave={savePred} league={league} />}
-            {tab === "tabla" && <Leaderboard league={league} meId={session.user.id} />}
-            {tab === "admin" && isAdmin && <Admin matches={matches} onResult={saveResult} />}
-          </>}
+          <div className="ticket" style={{ display: "flex", marginBottom: 20, overflow: "hidden" }}>
+            {tabs.map(([k, lbl]) => (
+              <button key={k} className="tab" data-on={tab === k} onClick={() => setTab(k)}>{lbl}</button>
+            ))}
+          </div>
+          {tab === "jugar" && <Predictions matches={matches} preds={preds} onSave={savePred} league={league} />}
+          {tab === "tabla" && <Leaderboard league={league} meId={session.user.id} />}
+          {tab === "admin" && isAdmin && <Admin matches={matches} onResult={saveResult} />}
+        </>}
 
       <footer style={{ textAlign: "center", marginTop: 40, fontSize: 11.5, color: "var(--muted)" }}>
         El Prode ’26 · datos del fixture: openfootball · v1 partido a partido
